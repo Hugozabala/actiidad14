@@ -30,14 +30,25 @@ class agr_participante:
                 return lista
             else:
                 pivote = lista[0]
-                mayores = [x for x in lista[1:] if x.numero > pivote.numero]
-                iguales = [x for x in lista if x.numero == pivote.numero]
-                menores = [x for x in lista[1:] if x.numero < pivote.numero]
+                mayores = [x for x in lista[1:] if x.edad > pivote.edad]
+                iguales = [x for x in lista if x.edad == pivote.edad]
+                menores = [x for x in lista[1:] if x.edad < pivote.edad]
                 return quick_sort(mayores) + iguales + quick_sort(menores)
 
         self.participante = quick_sort(self.participante)
 
+    def ordenar_numero(self):
+        def quick_sort(lista):
+              if len(lista) <= 1:
+                 return lista
+              else:
+                    pivote = lista[0]
+                    mayores = [x for x in lista[1:] if x.nombre > pivote.nombre]
+                    iguales = [x for x in lista if x.nombre == pivote.nombre]
+                    menores = [x for x in lista[1:] if x.nombre < pivote.nombre]
+              return quick_sort(mayores) + iguales + quick_sort(menores)
 
+        self.participante = quick_sort(self.participante)
 
 
 competencia = agr_participante()
@@ -59,8 +70,8 @@ while op!=5:
                             edad = int(input("Ingrese edad: "))
                             categoria = (input("Ingrese categoria: "))
 
-                            participante = participante(numero,nombre, edad, categoria)
-                            competencia.agr_paticipante(participante)
+                            participante1 = participante(numero,nombre, edad, categoria)
+                            competencia. agr_participante(participante1)
                      except ValueError as e:
                             print(f"Error al ingresar datos: {e}")
 
