@@ -49,29 +49,29 @@ while op!=5:
     match op:
             case 1:
 
-                cantidad = int(input("¿Cuántos repartidores desea ingresar? "))
+                cantidad = int(input("¿Cuántos participantes desea ingresar? "))
 
                 for i in range(cantidad):
-                     print(f"\nRepartidor #{i + 1}")
+                     print(f"\nparticipante #{i + 1}")
                      try:
+                            numero= int(input("Ingrese numero de dorsal: "))
                             nombre = input("Ingrese el nombre completo: ")
-                            paquetes = int(input("Ingrese paquetes entregados: "))
-                            zona = int(input("Ingrese zona: "))
+                            edad = int(input("Ingrese edad: "))
+                            categoria = (input("Ingrese categoria: "))
 
-                            participante = participante(nombre, paquetes, zona)
+                            participante = participante(numero,nombre, edad, categoria)
                             competencia.agr_paticipante(participante)
                      except ValueError as e:
                             print(f"Error al ingresar datos: {e}")
 
             case 2:
+                break
 
             case 3:
-
+                break
 
             case 4:
-
-
-
+                break
             case 5:
                   print("fin de programa ")
 
